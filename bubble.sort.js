@@ -5,8 +5,6 @@ const bubbleSort = (arr) => {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
       }
     }
-
-    console.log(arr);
   }
 
   return arr;
@@ -15,7 +13,7 @@ const bubbleSort = (arr) => {
 const executeTestCase = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     const sortedArray = bubbleSort(arr[i]);
-    console.log(sortedArray);
+    console.log("sortedArray: ", sortedArray);
   }
 };
 
