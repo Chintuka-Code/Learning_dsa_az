@@ -39,4 +39,4 @@ const reverseArray = (startIndex, endIndex, arr) => {
   return arr;
 };
 
-nextPossiblePermutation([2, 1, 5, 4, 3, 0, 0]);
+console.log(nextPossiblePermutation([2, 1, 5, 4, 3, 0, 0]));
