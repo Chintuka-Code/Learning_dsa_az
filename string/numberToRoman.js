@@ -15,28 +15,24 @@ const numberToRoman = (num) => {
     [1, "I"],
   ]);
 
-  let reminder = num;
   let romanNumber = "";
 
-  while (reminder !== 0) {
-    const divisor = findMinDivisor(reminder, romanFormat);
-    const times = Math.floor(reminder / divisor);
-    reminder = reminder % divisor;
+  for (const [key, value] of romanFormat) {
+    if (key === 0) {
+      break;
+    }
 
-    for (let i = 0; i < times; i++) {
-      romanNumber += romanFormat.get(divisor);
+    const times = Math.floor(num / key);
+    num = num % key;
+
+    if (times > 0) {
+      for (let i = 0; i < times; i++) {
+        romanNumber += value;
+      }
     }
   }
 
   return romanNumber;
-};
-
-const findMinDivisor = (number, record) => {
-  for (const [key] of record) {
-    if (key <= number) {
-      return key;
-    }
-  }
 };
 
 console.log(numberToRoman(456));
