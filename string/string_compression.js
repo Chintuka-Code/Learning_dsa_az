@@ -27,4 +27,4 @@ const stringCompression = (arr) => {
   return arr;
 };
 
-console.log(stringCompression(["a", "b", "c"]));
+console.log(stringCompression(["a", "a", "b", "c"]));
