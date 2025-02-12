@@ -74,6 +74,21 @@ class SinglyLinkedList {
 
     this.useRecursion(forward, node);
   }
+
+  // Slow and Fast Pointer
+  middleNode() {
+    if (!this.head || !this.head.next) return this.head;
+
+    let slow = this.head;
+    let fast = this.head;
+
+    while (fast && fast.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+
+    console.log(slow.value);
+  }
 }
 
 // Example usage
@@ -81,6 +96,6 @@ const list = new SinglyLinkedList();
 list.append(10);
 list.append(20);
 list.append(30);
+list.append(40);
 
-list.reverse();
-list.print();
+list.middleNode();
