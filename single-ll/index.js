@@ -47,8 +47,7 @@ class SinglyLinkedList {
   }
 
   reverse() {
-    if (!this.head || this.head.next) return;
-
+    if (!this.head || !this.head.next) return;
     this.tail = this.head;
     let prev = null;
     let current = this.head;
@@ -61,6 +60,19 @@ class SinglyLinkedList {
       current = forward;
     }
     this.head = prev;
+  }
+
+  // Reverse using recursion
+  useRecursion(node = this.head, prev = null) {
+    if (!node) {
+      this.head = prev;
+      return;
+    }
+
+    let forward = node.next;
+    node.next = prev;
+
+    this.useRecursion(forward, node);
   }
 }
 
