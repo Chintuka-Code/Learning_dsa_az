@@ -1,6 +1,6 @@
 export class Node {
-  left: Node;
-  right: Node;
+  left: Node | null = null;
+  right: Node | null = null;
   value: number;
 
   constructor(value: number) {
