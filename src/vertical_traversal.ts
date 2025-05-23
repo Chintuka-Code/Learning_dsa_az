@@ -54,3 +54,9 @@ function verticalTraversal(rootNode: Node | null): number[][] {
   result = result.map((arr) => arr.sort((a, b) => a - b));
   return result;
 }
+
+/**
+We can also use same approach to do get top view of the tree.
+Top view of a binary tree is the set of nodes visible when the tree is viewed from the top.
+The nodes in the top view are the leftmost and rightmost nodes at each vertical level. or First node at each vertical level.
+*/
