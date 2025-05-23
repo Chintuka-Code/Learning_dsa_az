@@ -15,6 +15,20 @@ function verticalTraversal(rootNode: Node | null): number[][] {
   const queue: [Node, number][] = [[rootNode, 0]];
   let min = 0;
   let max = 0;
+
+  /**
+  Here in the map we are creating an array like this
+  [
+   0: [1, 2, 3],
+  -1: [4, 5],
+  -2: [6, 7],
+   1: [8, 9],
+   2: [10, 11]
+  ]
+   key is the vertical level of the tree and value is the actual value of the node.
+   HashMap is used to store the values of the nodes at each vertical level. Basically to group the nodes.
+  */
+
   while (queue.length > 0) {
     const [currentNode, column] = queue.shift()!;
     if (!map.has(column)) {
