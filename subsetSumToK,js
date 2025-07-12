@@ -10,6 +10,7 @@ function subsetSum(index, target, arr, current = []) {
     arr[index],
     ...current,
   ]);
+
   const exclude = subsetSum(index - 1, target, arr, current);
   return include || exclude;
 }
